@@ -1,0 +1,512 @@
+autostrada,progressiva_km,nome,codice
+A01,7.7,Melegnano,37
+A01,8.9,Milano Sud,1
+A01,22.3,Lodi,2
+A01,37.8,Casalpusterlengo,3
+A01,49.7,Basso Lodigiano,4
+A01,74.0,Fiorenzuola,6
+A01,90.4,Fidenza,7
+A01,110.4,Parma,8
+A01,124.4,Terre di canossa - Campegine,91
+A01,137.1,Reggio Emilia,9
+A01,157.6,Modena Nord,10
+A01,170.8,Modena Sud,11
+A01,184.789,Valsamoggia,96
+A01,199.89,Sasso Marconi Nord,70
+A01,209.8,Sasso Marconi,14
+A01,222.7,Rioveggio,15
+A01,237.2,Pian del Voglio,16
+A01,242.3,Roncobilaccio,17
+A01,261.5,Barberino di Mugello,18
+A01,278.1,Calenzano-Sesto Fiorentino,19
+A01,279.9,Firenze Nord,20
+A01,286.9,Firenze Scandicci,21
+A01,289.7,Villa Costanza,97
+A01,295.5,Firenze Impruneta,22
+A01,300.9,Firenze Sud,23
+A01,319.9,Incisa - Reggello,24
+A01,335.8,Valdarno,25
+A01,358.5,Arezzo,26
+A01,371.6,Monte San Savino,27
+A01,385.4,Valdichiana,28
+A01,409.9,Chiusi-Chianciano Terme,29
+A01,427.8,Fabro,30
+A01,451.4,Orvieto,31
+A01,479.5,Attigliano,32
+A01,491.3,Orte,33
+A01,500.9,Magliano Sabina,34
+A01,516.0,Ponzano Romano-Soratte,90
+A01,555.469,Guidonia Montecelio,93
+A01,586.9,Valmontone,705
+A01,592.9,Colleferro,706
+A01,603.9,Anagni-Fiuggi,707
+A01,618.2,Ferentino,786
+A01,624.2,Frosinone,708
+A01,642.0,Ceprano,709
+A01,658.3,Pontecorvo,710
+A01,669.6,Cassino,711
+A01,678.6,San Vittore,712
+A01,700.8,Caianello,713
+A01,719.8,Capua,714
+A01,728.6,Santa Maria Capua Vetere,776
+A01,733.7,Caserta Nord,715
+A01,739.7,Napoli Nord,779
+A01,740.6,Caserta Sud,716
+A01,3.6,Roma Nord,36
+A01,4.0,Fiano Romano,35
+A01,9.5,Castelnuovo di Porto,92
+A01,5.0,San Cesareo,704
+A01,10.2,Monteporzio,703
+A01,14.9,Roma sud,702
+A01,739.7,Caserta Centro,778
+A01,58.2,Piacenza Sud,5
+A01,17.425,Badia,94
+A01,28.087,Firenzuola,95
+A01,261.5,Barberino di Mugello,18
+A03,4.7,Ponticelli,17
+A03,4.8,Napoli Sud,1
+A03,8.1,Portici,4
+A03,12.5,Torre del Greco,5
+A03,17.5,Torre Annunziata Nord,15
+A03,19.7,Torre Annunziata Sud,6
+A03,21.9,Pompei,7
+A03,22.6,Castellammare di Stabia,8
+A03,25.0,Scafati,9
+A03,29.8,Angri,10
+A03,31.83,Angri Sud,18
+A03,36.7,Nocera Sud,16
+A03,36.8,Nocera Nord,11
+A03,42.8,Cava de' Tirreni,12
+A04,24.3,Torino Rondissone,420
+A04,36.8,Borgo d'Ale,426
+A04,45.2,Santhia`,429
+A04,54.4,Carisio,430
+A04,60.0,Balocco,432
+A04,67.5,Greggio,433
+A04,73.6,Biandrate-Vicolungo,434
+A04,82.9,Novara Ovest,436
+A04,90.5,Novara Est,437
+A04,105.4,Marcallo-Mesero,440
+A04,110.5,Arluno,441
+A04,118.4,Rho,442
+A04,120.9,Milano Ghisolfa,443
+A04,138.2,Milano Est,654
+A04,138.9,Monza,656
+A04,143.9,bivio Tangenziale Est,655
+A04,145.8,Agrate,653
+A04,150.0,Cavenago,652
+A04,157.1,Trezzo,651
+A04,160.6,Capriate,650
+A04,167.7,Dalmine,649
+A04,172.4,Bergamo,648
+A04,179.0,Seriate,647
+A04,187.6,Grumello,646
+A04,190.9,Ponte Oglio,645
+A04,193.1,Palazzolo,644
+A04,201.3,Rovato,643
+A04,206.3,Ospitaletto,642
+A04,210.831,Castegnato,378
+A04,215.2,Brescia Ovest,641
+A04,228.5,Brescia Est,618
+A04,244.2,Desenzano,617
+A04,251.6,Sirmione,616
+A04,259.1,Peschiera,615
+A04,270.7,Sommacampagna,614
+A04,280.1,Verona Sud,613
+A04,290.0,Verona Est,612
+A04,302.7,Soave,611
+A04,311.7,Montebello,610
+A04,320.9,Montecchio,609
+A04,326.9,Vicenza Ovest,608
+A04,334.5,Vicenza Est,607
+A04,343.6,Grisignano,606
+A04,356.6,Padova Ovest,605
+A04,363.6,Padova Est,604
+A04,380.3,Spinea,598
+A04,389.391,Martellago-Scorze',597
+A04,400.1,Preganziol,596
+A04,416.09,Meolo - Roncade,513
+A04,424.6,San Dona' di Piave,511
+A04,432.2,Cessalto,510
+A04,438.9,San Stino di Livenza,509
+A04,467.7,Latisana,507
+A04,482.7,San Giorgio di Nogaro,506
+A04,491.3,Palmanova,504
+A04,506.5,Redipuglia,502
+A04,515.1,Trieste Lisert,501
+A04,120.9,Milano Tangenziale Nord Ovest,444
+A05,3.7,Settimo Torinese,419
+A05,3.701,Torino Nord,401
+A05,4.0,Settimo Nord,400
+A05,10.8,Volpiano,402
+A05,24.9,San Giorgio,403
+A05,33.0,Scarmagno,404
+A05,39.3,Ivrea,407
+A05,53.4,Quincinetto,408
+A05,57.6,Pont Saint Martin,409
+A05,70.1,Verres,410
+A05,81.3,Chatillon-Saint Vincent,411
+A05,92.7,Nus,412
+A05,100.2,Aosta,414
+A05,101.1,Aosta est,469
+A05,112.8,Aosta Ovest,415
+A05,7.9,Albiano,405
+A05,0.1,Aosta-Gran San Bernardo,413
+A06,13.0,Barriera di Torino,351
+A06,13.1,Carmagnola,352
+A06,34.6,Marene,353
+A06,49.3,Fossano,354
+A06,57.8,Carru`,355
+A06,62.7,Mondovi`,356
+A06,70.6,Niella Tanaro,358
+A06,81.0,Ceva,359
+A06,97.1,Millesimo,361
+A06,109.6,Altare,362
+A07,4.1,Milano Ovest,201
+A07,10.5,Binasco,202
+A07,21.5,Bereguardo,203
+A07,30.6,Gropello Cairoli,204
+A07,50.0,Casei Gerola,205
+A07,54.0,Castelnuovo Scrivia,206
+A07,63.5,Tortona,207
+A07,84.5,Serravalle Scrivia,208
+A07,88.6,Vignole Borbera,209
+A07,100.7,Isola del Cantone,210
+A07,106.5,Ronco Scrivia,211
+A07,111.5,Busalla,212
+A07,125.8,Genova Bolzaneto,213
+A07,132.8,Genova Ovest,214
+A08,5.6,MILANO NORD,1
+A08,8.1,Lainate,2
+A08,29.9,Gallarate,6
+A08,31.9,Gallarate Nord,10
+A08,2.5,Gallarate Ovest,246
+A08,4.0,Besnate,245
+A08,11.9,Sesto Calende-Vergiate,244
+A08,17.9,Castelletto Ticino,243
+A09,29.8,Fino Mornasco,4
+A09,33.0,Como Grandate,3
+A10,2.3,Genova Aeroporto,215
+A10,6.0,Genova Pegli,216
+A10,10.7,Genova Pra',217
+A10,20.2,Arenzano,218
+A10,26.8,Varazze,219
+A10,32.35,Celle Ligure,220
+A10,36.4,Albisola,221
+A10,52.7,Spotorno,482
+A10,59.4,Orco Feglino,483
+A10,63.0,Finale Ligure,484
+A10,67.7,Pietra Ligure,485
+A10,72.6,Borghetto Santo Spirito,497
+A10,81.2,Albenga,486
+A10,93.2,Andora,487
+A10,100.0,San Bartolomeo,488
+A10,106.3,Imperia Est,489
+A10,112.2,Imperia Ovest,490
+A10,128.4,Arma di Taggia,491
+A10,139.4,Sanremo Ovest,493
+A10,145.8,Bordighera,494
+A10,151.8,Ventimiglia,495
+A10,151.801,Ventimiglia,496
+A10,44.8,Savona-Vado,222
+A11,4.2,Firenze Ovest,333
+A11,9.0,Prato Est,334
+A11,16.8,Prato Ovest,335
+A11,27.4,Pistoia,336
+A11,39.0,Montecatini Terme,337
+A11,46.4,Chiesina Uzzanese,338
+A11,49.3,Altopascio,339
+A11,57.2,Capannori,340
+A11,66.0,Lucca,344
+A11,81.0,Pisa Nord,345
+A11,69.0,Lucca ovest,348
+A11,81.7,Massarosa,290
+A11,6.3,Firenze Nord,20
+A12,4.2,Genova Est,260
+A12,11.5,Genova Nervi,261
+A12,22.8,Recco,262
+A12,28.4,Rapallo,263
+A12,38.3,Chiavari,264
+A12,41.1,Lavagna,265
+A12,48.7,Sestri Levante,266
+A12,60.5,Deiva Marina,273
+A12,70.1,Carrodano,274
+A12,75.8,Brugnato,275
+A12,101.6,Sarzana,279
+A12,110.0,Carrara,280
+A12,116.4,Massa,281
+A12,127.9,Versilia,282
+A12,161.6,Pisa Centro,287
+A12,177.8,Collesalvetti,300
+A12,205.9,Rosignano Marittimo,301
+A12,206.9,Rosignano Barriera,302
+A12,11.3,Maccarese-Fregene,2
+A12,11.6,Roma Ovest,1
+A12,14.9,Torrimpietra,6
+A12,52.2,Civitavecchia Sud,4
+A12,52.3,Aurelia,3
+A12,77.8,Tarquinia,308
+A12,170.7,barriera di Livorno,286
+A12,78.9,Pisa Centro,287
+A12,0.6,Viareggio,283
+A12,2.5,Rosignano,303
+A13,0.6,Bologna Arcoveggio,101
+A13,7.9,Bologna Interporto,100
+A13,20.5,Altedo,102
+A13,33.7,Ferrara Sud,103
+A13,41.9,Ferrara Nord,104
+A13,49.1,Occhiobello,105
+A13,63.0,Rovigo Sud - Villamarzana,113
+A13,70.4,Rovigo,106
+A13,74.8,Boara,107
+A13,88.6,Monselice,108
+A13,95.0,Terme Euganee,109
+A13,112.4,Padova industriale,112
+A13,0.7,Padova Sud,110
+A13,0.6,Bologna Arcoveggio,101
+A14,4.8,Bologna Borgo Panigale,12
+A14,15.5,Bologna Fiera,40
+A14,22.2,Bologna San Lazzaro,41
+A14,38.2,Castel San Pietro,38
+A14,50.1,Imola,42
+A14,64.5,Faenza,43
+A14,81.6,Forli`,44
+A14,93.6,Cesena Nord,39
+A14,99.7,Cesena,45
+A14,110.069,Valle Rubicone,69
+A14,117.3,Rimini Nord,46
+A14,127.4,Rimini Sud,47
+A14,135.4,Riccione,48
+A14,143.9,Cattolica,49
+A14,155.9,Pesaro-Urbino,50
+A14,173.3,Fano,51
+A14,185.3,Marotta-Mondolfo,64
+A14,194.5,Senigallia,52
+A14,207.9,Montemarciano,68
+A14,213.5,Ancona Nord,53
+A14,230.4,Ancona Sud,54
+A14,245.5,Loreto-Porto Recanati,55
+A14,262.6,Civitanova Marche Macerata,56
+A14,270.82,Porto S. Elpidio,67
+A14,279.5,Fermo,57
+A14,287.9,Pedaso,58
+A14,301.8,Grottammare,66
+A14,311.7,San Benedetto del Tronto,59
+A14,319.5,Val Vibrata,65
+A14,334.4,Teramo - Giulianova Mosciano S.Angelo,60
+A14,344.0,Roseto degli Abruzzi,61
+A14,351.8,Atri Pineto,62
+A14,364.2,Pescara Nord-Citta` Sant'Angelo,63
+A14,380.8,Pescara Ovest-Chieti,772
+A14,392.6,Pescara Sud-Francavilla,771
+A14,403.8,Ortona,770
+A14,413.0,Lanciano,769
+A14,421.1,Val di Sangro,768
+A14,437.3,Vasto Nord,767
+A14,453.8,Vasto Sud,766
+A14,476.1,Termoli Molise,765
+A14,507.0,Poggio Imperiale,764
+A14,528.6,San Severo,763
+A14,554.1,Foggia,762
+A14,564.959,Foggia Zona Industriale,760
+A14,589.2,Cerignola Est,761
+A14,610.5,Canosa,732
+A14,626.9,Andria-Barletta,733
+A14,638.1,Trani,734
+A14,652.4,Molfetta,735
+A14,663.0,Bitonto,736
+A14,672.2,Bari Nord,737
+A14,677.8,Bari Sud,738
+A14,697.6,Acquaviva delle Fonti,739
+A14,709.6,Gioia del Colle,740
+A14,723.9,Mottola-Castellaneta,741
+A14,735.2,Taranto Nord,742
+A14,8.5,Ravenna,82
+A14,0.8,Bologna Casalecchio,13
+A15,5.2,Parma Ovest,151
+A15,22.7,Fornovo,152
+A15,42.1,Borgotaro,153
+A15,51.0,Berceto,154
+A15,74.6,Pontremoli,155
+A15,91.4,Aulla,156
+A15,101.7,La Spezia,278
+A16,7.3,Pomigliano d'Arco,718
+A16,13.2,Napoli Est,780
+A16,23.528,Tufino,729
+A16,26.6,Baiano,720
+A16,41.1,Avellino Ovest,721
+A16,49.7,Avellino Est,722
+A16,68.7,Benevento,723
+A16,81.7,Grottaminarda,724
+A16,104.2,Vallata,725
+A16,111.0,Lacedonia,726
+A16,127.9,Candela,727
+A16,159.9,Cerignola,728
+A18,1.0,Messina Sud,1
+A18,22.0,Roccalumera,3
+A18,36.0,Taormina,4
+A18,41.0,Giardini Naxos,5
+A18,48.0,Fiumefreddo,6
+A18,59.0,Giarre,7
+A18,69.0,Acireale,8
+A18,77.0,Catania Nord,9
+A20,21.0,barriera di Messina Nord,1
+A20,24.0,Rometta,2
+A20,38.0,Milazzo-Isole Eolie,3
+A20,47.0,Barcellona,4
+A20,58.0,Falcone,5
+A20,67.0,Patti,6
+A20,84.0,Brolo,7
+A20,97.0,Rocca di Capri Leone,8
+A20,107.0,San Agata di Militello,9
+A20,135.0,S.Stefano di Camastra,12
+A20,144.0,Tusa,13
+A20,155.0,Castelbuono,14
+A20,163.0,Cefalu',15
+A20,181.0,Buonfornello,16
+A21,10.7,Villanova,446
+A21,10.8,Villanova,445
+A21,32.5,Asti Ovest,447
+A21,38.7,Asti Est,448
+A21,51.6,Felizzano,449
+A21,66.0,Alessandria Ovest,451
+A21,76.0,Alessandria Est,452
+A21,101.3,Voghera,455
+A21,114.9,Casteggio,456
+A21,126.9,Broni Stradella,457
+A21,140.9,Castel San Giovanni,458
+A21,157.4,Piacenza Ovest,459
+A21,176.3,Caorso,637
+A21,186.0,Castelvetro,635
+A21,194.8,Cremona,634
+A21,210.0,Pontevico,633
+A21,220.3,Manerbio,632
+A21,233.2,Brescia Sud,630
+A21,238.2,Brescia Centro,631
+A22,15.8,Brennero,681
+A22,15.801,Vipiteno,680
+A22,38.0,Bressanone,679
+A22,47.7,Bressanone Zona Industriale,683
+A22,53.0,Chiusa,678
+A22,77.4,Bolzano Nord,677
+A22,85.3,Bolzano Sud,676
+A22,102.0,Egna Ora,675
+A22,121.5,San Michele,674
+A22,131.7,Trento Nord,682
+A22,136.5,Trento Centro,673
+A22,142.0,Trento Sud,684
+A22,158.4,Rovereto Nord,672
+A22,167.0,Rovereto Sud,671
+A22,179.4,Ala Avio,670
+A22,207.0,Affi,669
+A22,225.8,Verona Nord,668
+A22,243.0,Nogarole Rocca,667
+A22,256.7,Mantova Nord,666
+A22,265.5,Mantova Sud,665
+A22,277.2,Pegognaga,664
+A22,286.0,Reggiolo Rolo,663
+A22,302.6,Carpi,662
+A22,310.9,Campogalliano,661
+A23,13.7,Udine Sud,505
+A23,26.0,Udine Nord,541
+A23,44.9,Gemona-Osoppo,542
+A23,59.6,Carnia,543
+A23,92.4,Pontebba,544
+A23,105.2,Ugovizza Tarvisio,545
+A24,8.0,Lunghezza,802
+A24,8.1,Roma Est,801
+A24,12.6,Tivoli,803
+A24,24.0,Castel Madama,804
+A24,33.2,Vicovaro-Mandela,805
+A24,50.5,Carsoli Oricola,806
+A24,61.2,Tagliacozzo,807
+A24,75.1,Valle del Salto,808
+A24,84.9,Tornimparte,809
+A24,101.0,L'Aquila Ovest,810
+A24,106.7,L'Aquila Est,811
+A24,116.8,Assergi,812
+A24,136.6,San Gabriele Colledara,813
+A24,146.1,Teramo,814
+A24,2.5,Settecamini,819
+A24,4.5,Ponte di Nona,818
+A24,2.5,Settecamini,819
+A24,4.5,Ponte di Nona,818
+A25,83.1,Magliano dei Marsi,830
+A25,87.9,Avezzano,831
+A25,101.2,Aielli Celano,832
+A25,110.3,Pescina,833
+A25,121.6,Cocullo,834
+A25,136.8,Sulmona-Pratola Peligna,835
+A25,149.9,Bussi Popoli,836
+A25,157.2,Casauria Torre De' Passeri,837
+A25,166.4,Scafa-Alanno,838
+A25,170.887,Manoppello,829
+A25,177.5,Chieti,839
+A25,185.4,Pescara-Villanova,840
+A25,0.2,Avezzano,831
+A26,14.0,Masone,230
+A26,29.9,Ovada,231
+A26,59.5,Alessandria Sud,233
+A26,89.6,Casale Monferrato Sud,234
+A26,94.1,Casale Monferrato Nord,235
+A26,116.8,Vercelli Est,239
+A26,145.1,Romagnano Sesia - Ghemme,240
+A26,153.4,Borgomanero,241
+A26,165.5,Arona,247
+A26,166.6,Lago Maggiore,248
+A26,7.9,Novi Ligure,232
+A26,8.0,Vercelli Ovest,236
+A27,5.0,Venezia,521
+A27,13.4,Treviso Sud,522
+A27,22.6,Treviso Nord,523
+A27,52.3,Vittorio Veneto Sud,525
+A27,58.9,Vittorio Veneto Nord,526
+A27,66.8,Fadalto-Lago Santa Croce,527
+A27,75.2,Belluno,528
+A27,0.1,Conegliano Veneto,524
+A28,0.8,Portogruaro,508
+A28,36.428,Cordignano,537
+A28,43.79,Godega,538
+A30,18.9,Nola,719
+A30,30.4,Palma Campania,785
+A30,36.2,Sarno,781
+A30,40.0,Nocera Pagani,784
+A30,44.4,Castel San Giorgio,782
+A30,49.7,Salerno,783
+A31,0.0,Badia Polesine,626
+A31,7.644,Piacenza d'Adige,625
+A31,18.047,Santa Margherita d'Adige,624
+A31,24.972,Noventa Vicentina,623
+A31,32.102,Agugliaro,622
+A31,38.662,Albettone-Barbarano,621
+A31,46.602,Montegaldella,620
+A31,61.672,Vicenza Nord,690
+A31,69.672,Dueville,691
+A31,79.472,Thiene,692
+A31,88.672,Piovene-Rocchette,693
+A32,9.0,Avigliana,191
+A32,57.6,Salbertrand,192
+A33,4.174,Castelletto Stura,181
+A33,12.595,S. Albano,180
+A33,0.0,Marene,353
+A33,7.5,Cherasco,189
+A33,30.9,barriera govone,188
+A56,5.4,Astroni,1
+A56,7.2,Agnano,2
+A56,10.1,Fuorigrotta,3
+A56,12.5,Vomero,4
+A56,13.8,Camaldoli,5
+A56,15.1,zona Ospedaliera Cardarelli,10
+A56,15.3,Arenella,6
+A56,16.1,Capodimonte,7
+A56,18.8,Corso Malta,8
+A56,19.3,Capodichino-Napoli Est,9
+A57,1.3,Mirano Dolo,602
+A57,7.2,Mira-Oriago,603
+A57,9.2,Venezia Mestre,601
+A57,25.5,Venezia Est,515
+A58,1.753,Pessano con Bornago,380
+A58,4.137,Gessate,381
+A58,8.196,Pozzuolo Martesana,382
+A58,18.557,Paullo,383
+A58,29.398,Vizzolo Predabissi,384
