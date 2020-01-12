@@ -8,6 +8,13 @@ import java.text.SimpleDateFormat;
 
 import interfaces.DataHandler;
 
+/**
+ * The class for the MYSQL database
+ * 
+ * @author gabrieleromanato
+ *
+ */
+
 public class Database implements DataHandler {
 	
 	private Connection conn;
@@ -22,6 +29,17 @@ public class Database implements DataHandler {
             System.out.println("VendorError: " + ex.getErrorCode());
         }
     }
+	
+	/**
+	 *   Gets database results from an SQL query.
+	 *   Normalizes the results in an associative structure.
+	 *   Normalizes data types as strings.
+	 *   
+	 *   
+	 *   @param query String The SQL query
+	 *   @return ArrayList
+	 * 
+	 */
 	
 	
 	public ArrayList<HashMap<String, String>> readData( String query ) {
@@ -109,6 +127,16 @@ public class Database implements DataHandler {
 	        }
 	        return data;
 	}
+	
+	/**
+	 *   Performs INSERT, UPDATE and DELETE SQL queries.
+	 *  
+	 *   
+	 *   
+	 *   @param query String The SQL query
+	 *   @return Boolean
+	 * 
+	 */
 	
 	public boolean writeData(String query) {
 		

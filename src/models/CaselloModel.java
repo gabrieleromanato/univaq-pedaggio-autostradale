@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import classes.Database;
 
+/**
+ * The data model for an casello record
+ * 
+ * @author gabrieleromanato
+ *
+ */
+
 public class CaselloModel extends Model {
 	
 	private String autostrada;
@@ -66,6 +73,14 @@ public class CaselloModel extends Model {
 	public void setData(HashMap<?, ?> data) {
 		this.data = data;
 	}
+	
+	/**
+	 *   Gets a casello record from the database
+	 *   
+	 *   @param none
+	 *   @return HashMap
+	 * 
+	 */
 
 	@Override
 	public HashMap<String, String> get() {
@@ -86,12 +101,28 @@ public class CaselloModel extends Model {
 			return null;
 		}	
 	}
+	
+	/**
+	 *   Insert a casello record into the database
+	 *   
+	 *   @param none
+	 *   @return Boolean
+	 * 
+	 */
 
 	@Override
 	public boolean save() {
 		String query = "INSERT INTO caselli (autostrada, progressiva_km, nome, codice) VALUES ('" + autostrada + "'," + progressivaKm + ",'" + nome + "','" + codice + "')";
 		return db.writeData(query);
 	}
+	
+	/**
+	 *   Updates a casello record
+	 *   
+	 *   @param none
+	 *   @return Boolean
+	 * 
+	 */
 
 	@Override
 	public boolean update() {
@@ -99,6 +130,14 @@ public class CaselloModel extends Model {
 		String query = "UPDATE caselli SET autostrada = '" + autostrada + "', progressiva_km = " + progressivaKm + ", nome = '" + nome + "', codice = '" + codice + "' WHERE codice = '" + codice + "'";
 		return db.writeData(query);
 	}
+	
+	/**
+	 *   Deletes a casello record
+	 *   
+	 *   @param none
+	 *   @return Boolean
+	 * 
+	 */
 
 	@Override
 	public boolean delete() {

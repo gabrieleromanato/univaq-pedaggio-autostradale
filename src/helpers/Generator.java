@@ -2,7 +2,21 @@ package helpers;
 
 import java.util.Random;
 
+/**
+ *  Helper methods and utilities
+ * 
+ * @author gabrieleromanato
+ *
+ */
+
 public class Generator {
+	
+	/**
+	 * Creates a random plate number in the format letterletter-digits
+	 * 
+	 * @param None
+	 * @return String
+	 */
 	
 	public static String createPlateNumber() {
 		char[] letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();

@@ -6,6 +6,13 @@ import classes.Database;
 import java.util.HashMap;
 import java.text.SimpleDateFormat;
 
+/**
+ * The data model for a pagamento record
+ * 
+ * @author gabrieleromanato
+ *
+ */
+
 public class Pagamento extends Model {
 	
 	private String idVeicolo;
@@ -66,6 +73,14 @@ public class Pagamento extends Model {
 	public void setTipologia(String tipologia) {
 		this.tipologia = tipologia;
 	}
+	
+	/**
+	 *   Gets a pagamento record from the database
+	 *   
+	 *   @param none
+	 *   @return HashMap
+	 * 
+	 */
 
 	@Override
 	public HashMap<String, String> get() {
@@ -86,6 +101,14 @@ public class Pagamento extends Model {
 			return null;
 		}	
 	}
+	
+	/**
+	 *   Inserts a pagamento record into the database
+	 *   
+	 *   @param none
+	 *   @return Boolean
+	 * 
+	 */
 
 	@Override
 	public boolean save() {
@@ -98,6 +121,14 @@ public class Pagamento extends Model {
 		
 		return db.writeData(query);
 	}
+	
+	/**
+	 *   Updates a pagamento record
+	 *   
+	 *   @param none
+	 *   @return Boolean
+	 * 
+	 */
 
 	@Override
 	public boolean update() {
@@ -109,6 +140,14 @@ public class Pagamento extends Model {
 		String query = "UPDATE pagamenti SET id_veicolo = '" + idVeicolo + "', importo = " + importo + ", orario = '" + dateTime + "', tipologia = '" + tipologia + "' WHERE id_veicolo = '" + idVeicolo + "'";
 		return db.writeData(query);
 	}
+	
+	/**
+	 *   Deletes a pagamento record from the database
+	 *   
+	 *   @param none
+	 *   @return Boolean
+	 * 
+	 */
 
 	@Override
 	public boolean delete() {

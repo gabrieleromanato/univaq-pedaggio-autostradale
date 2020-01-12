@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import classes.Database;
 
+/**
+ * The data model for an autostrada record
+ * 
+ * @author gabrieleromanato
+ *
+ */
+
 public class Autostrada extends Model {
 	
 	private String nome;
@@ -22,6 +29,14 @@ public class Autostrada extends Model {
 		this.codice = codice;
 		this.db = new Database();
 	}
+	
+	/**
+	 *  Gets an autostrada record from the database.
+	 *  
+	 *  @param none
+	 *  @return HashMap
+	 * 
+	 */
 
 	@Override
 	public HashMap<String,String> get() {
@@ -39,18 +54,42 @@ public class Autostrada extends Model {
 			return null;
 		}	
 	}
+	
+	/**
+	 *   Inserts an autostrada record into the database
+	 *   
+	 *   @param none
+	 *   @return Boolean
+	 * 
+	 */
 
 	@Override
 	public boolean save() {
 		String query = "INSERT INTO autostrade (nome, codice) VALUES ('" + nome + "','" + codice + "')";
 		return db.writeData(query);
 	}
+	
+	/**
+	 *   Updates an autostrada record
+	 *   
+	 *   @param none
+	 *   @return Boolean
+	 * 
+	 */
 
 	@Override
 	public boolean update() {
 		String query = "UPDATE autostrade SET nome = '" + nome + "', codice = '" + codice + "' WHERE codice = '" + codice + "'";
 		return db.writeData(query);
 	}
+	
+	/**
+	 *   Deletes an autostrada record
+	 *   
+	 *   @param none
+	 *   @return Boolean
+	 * 
+	 */
 
 	@Override
 	public boolean delete() {
