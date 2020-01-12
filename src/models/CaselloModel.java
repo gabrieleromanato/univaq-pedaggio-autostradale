@@ -1,6 +1,8 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import classes.Database;
 
 public class CaselloModel extends Model {
 	
@@ -9,6 +11,7 @@ public class CaselloModel extends Model {
 	private String nome;
 	private String codice;
 	private HashMap<?,?> data;
+	private Database db;
 	
 	public CaselloModel() {
 		this("A00", 1.00, "Casello", "000");
@@ -21,6 +24,7 @@ public class CaselloModel extends Model {
 		this.progressivaKm = progressivaKm;
 		this.nome = nome;
 		this.codice = codice;
+		this.db = new Database();
 	}
 
 	public String getAutostrada() {
@@ -64,27 +68,43 @@ public class CaselloModel extends Model {
 	}
 
 	@Override
-	public HashMap<?, ?> get() {
-		// TODO Auto-generated method stub
-		return null;
+	public HashMap<String, String> get() {
+		
+		String query = "SELECT * FROM caselli WHERE codice = '" + codice + "'";
+		ArrayList<HashMap<String, String>> results = db.readData(query);
+		if(results.size() > 0) {
+			HashMap<String, String> result = new HashMap<String, String>();
+			HashMap<String, String> datum = results.get(0);
+			
+			result.put("id", datum.get("id"));
+			result.put("nome", datum.get("nome"));
+			result.put("codice", datum.get("codice"));
+			result.put("autostrada", datum.get("autostrada"));
+			result.put("progressiva_km", datum.get("progressiva_km"));
+			return result;
+		} else {
+			return null;
+		}	
 	}
 
 	@Override
 	public boolean save() {
-		// TODO Auto-generated method stub
-		return false;
+		String query = "INSERT INTO caselli (autostrada, progressiva_km, nome, codice) VALUES ('" + autostrada + "'," + progressivaKm + ",'" + nome + "','" + codice + "')";
+		return db.writeData(query);
 	}
 
 	@Override
 	public boolean update() {
-		// TODO Auto-generated method stub
-		return false;
+		
+		String query = "UPDATE caselli SET autostrada = '" + autostrada + "', progressiva_km = " + progressivaKm + ", nome = '" + nome + "', codice = '" + codice + "' WHERE codice = '" + codice + "'";
+		return db.writeData(query);
 	}
 
 	@Override
 	public boolean delete() {
-		// TODO Auto-generated method stub
-		return false;
+		
+		String query = "DELETE FROM caselli WHERE codice = '" + codice + "'";
+		return db.writeData(query);
 	}
 
 }
