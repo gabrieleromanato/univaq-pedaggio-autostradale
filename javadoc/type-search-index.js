@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"app","l":"App"},{"p":"models","l":"Autostrada"},{"p":"models","l":"CaselloModel"},{"p":"classes","l":"Database"},{"p":"interfaces","l":"DataHandler"},{"p":"helpers","l":"Generator"},{"p":"models","l":"Model"},{"p":"models","l":"Pagamento"}]
