@@ -3,8 +3,11 @@ package views;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.net.URL;
 import java.util.ArrayList;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.DefaultListModel;
@@ -77,6 +80,18 @@ public class View extends JFrame implements ActionListener {
 	 */
 	
 	public void initView() {
+		try {
+			URL src = new URL("https://gabrieleromanato-com.s3-eu-west-1.amazonaws.com/universita/logo-univaq.png");
+			BufferedImage logo = ImageIO.read(src);
+			JLabel logoLabel = new JLabel(new ImageIcon(logo));
+			
+			logoLabel.setBounds(10, 10, 70, 87);
+			
+			this.content.add(logoLabel);
+			
+		} catch(Exception e) {
+			
+		}
 		setContentPane(this.content);
 		this.content.setLayout(null);
 		this.setTitle(this.title);
