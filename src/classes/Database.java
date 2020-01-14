@@ -3,7 +3,6 @@ package classes;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.sql.*;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 import interfaces.DataHandler;
@@ -102,6 +101,9 @@ public class Database implements DataHandler {
 	                	data.add(datum);
 	                	
 	                }
+	                
+	                rs.close();
+	                
 
 	                return data;
 

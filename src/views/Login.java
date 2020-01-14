@@ -41,15 +41,19 @@ public class Login extends View {
 		
 		if(username.equals("admin") && userPass.equals("admin")) {
 			
-			Admin.render();
+			Admin admin = new Admin();
+			admin.render();
+			
+			
 			
 		} else if (username.equals("user") && userPass.equals("user")) {
 			
-			User.render();
+				User userClass = new User();
+				userClass.render();
 			
 		} else {
 			JButton button = (JButton) fields.get(5);
-			JOptionPane.showMessageDialog(button, "Wrong Username And Password");
+			JOptionPane.showMessageDialog(button, "Credenziali errate");
 		}
 	}
 	
@@ -57,16 +61,17 @@ public class Login extends View {
 	 * Renders the view
 	 */
 	
+	@Override
 	
-	public static void render() {
+	public void render() {
 		Login login = new Login(0, 0, 1024, 768, "Login");
 		login.setBorders(5, 5, 5, 5);
 		login.addLabel("Login", 364, 60, 273, 93);
 		login.addInputField("text", 364, 170, 281, 34, 3);
 		login.addInputField("password", 364, 220, 281, 34, 3);
-		login.addLabel("Username", 250, 168, 250, 34);
+		login.addLabel("Nome utente", 250, 168, 250, 34);
 		login.addLabel("Password", 250, 220, 250, 34);
-		login.addButton("Login", 364, 270, 100, 34);
+		login.addButton("Entra", 364, 270, 100, 34);
 		login.initView();
 	}
 

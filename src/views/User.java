@@ -17,11 +17,13 @@ public class User extends View {
 	 * Renders the view
 	 */
 	
+	@Override
 	
-	public static void render() {
-		User user = new User(0, 0, 1024, 768, "User Area");
+	
+	public void render() {
+		User user = new User(0, 0, 1024, 768, "Area Utente");
 		user.setBorders(5, 5, 5, 5);
-		user.addLabel("User Area", 364, 60, 273, 93);
+		user.addLabel("Area Utente", 364, 60, 273, 93);
 		user.initView();
 	}
 

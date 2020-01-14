@@ -1,11 +1,13 @@
 package views;
 
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.DefaultListModel;
 
 /**
  * The base class for views
@@ -15,7 +17,7 @@ import javax.swing.border.EmptyBorder;
  */
 
 public class View extends JFrame implements ActionListener {
-	private JPanel content;
+	protected JPanel content;
 	private int x;
 	private int y;
 	private int width;
@@ -152,4 +154,65 @@ public class View extends JFrame implements ActionListener {
 		this.fields.add(button);
 	}
 	
+	
+	/**
+	 * Adds a menu
+	 * 
+	 * @param text The menu's name
+	 * @param x Horizontal coordinate
+	 * @param y Vertical coordinate
+	 * @param width Menu's width
+	 * @param height Menu's height
+	 * @param items Menu items
+	 */
+	
+	
+	public void addMenu(String text, int x, int y, int width, int height, String[] items) {
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBounds(x, y, width, height);
+		this.content.add(menuBar);
+		this.fields.add(menuBar);
+		
+		JMenu menu = new JMenu(text);
+		menuBar.add(menu);
+		this.fields.add(menu);
+		
+		for(int i = 0; i < items.length; i++) {
+			JMenuItem item = new JMenuItem(items[i]);
+			
+			
+			menu.add(item);
+			this.fields.add(item);
+			
+		}
+	}
+	
+	/**
+	 * Adds a list
+	 * @param items Array of items
+	 */
+	
+	public void addList(String[] items) {
+		DefaultListModel<String> listModel = new DefaultListModel<>();
+		for(int i = 0; i < items.length; i++) {
+			listModel.addElement(items[i]);
+		}
+		JList<String> list = new JList<>(listModel);
+		
+		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        list.setSelectedIndex(0);
+        list.setVisibleRowCount(5);
+        JScrollPane listScrollPane = new JScrollPane(list);
+		
+		this.content.add(listScrollPane, BorderLayout.PAGE_END);
+		this.fields.add(list);
+	}
+	
+	/**
+	 * Renders the view
+	 */
+	
+	public void render() {
+		
+	}
 }

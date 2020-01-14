@@ -1,5 +1,14 @@
 package views;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+
+
 public class Admin extends View {
 	
 	private static final long serialVersionUID = 1L;
@@ -13,16 +22,63 @@ public class Admin extends View {
 		
 	}
 	
+	@Override
+	
+	public void addMenu(String text, int x, int y, int width, int height, String[] items) {
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBounds(x, y, width, height);
+		this.content.add(menuBar);
+		this.fields.add(menuBar);
+		
+		JMenu menu = new JMenu(text);
+		menuBar.add(menu);
+		this.fields.add(menu);
+		
+		for(int i = 0; i < items.length; i++) {
+			JMenuItem item = new JMenuItem(items[i]);
+			item.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					JMenuItem menuItem = (JMenuItem)e.getSource();
+					String text = menuItem.getText().toLowerCase();
+					
+					switch(text) {
+						case "autostrade":
+							Autostrade auto = new Autostrade();
+							auto.render();
+							break;
+						default:
+							break;
+					}
+				}
+			});
+			
+		menu.add(item);
+		this.fields.add(item);
+			
+		}
+	}
+	
+	
 	/**
 	 * Renders the view
 	 */
 	
 	
-	public static void render() {
-		Admin admin = new Admin(0, 0, 1024, 768, "Admin Area");
+	@Override
+	
+	
+	public void render() {
+		String[] items = { "Autostrade", "Caselli" };
+		Admin admin = new Admin(0, 0, 1024, 768, "Area Amministrativa");
 		admin.setBorders(5, 5, 5, 5);
-		admin.addLabel("Admin Area", 364, 60, 273, 93);
+		admin.addLabel("Area Amministrativa", 364, 60, 273, 93);
+		
+		admin.addMenu("Menu", 364, 180, 400, 40, items);
+		
+		
+		
 		admin.initView();
+		
 	}
 
 }
