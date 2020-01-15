@@ -224,6 +224,20 @@ public class View extends JFrame implements ActionListener {
 	}
 	
 	/**
+	 * Adds a table 
+	 * @param columnNames Column names
+	 * @param data Table data
+	 */
+	
+	public void addTable(String[] columnNames, String[][] data) {
+		JTable table = new JTable(data, columnNames);
+		JScrollPane scrollPane = new JScrollPane(table);
+		
+		this.content.add(scrollPane);
+		this.fields.add(table);
+	}
+	
+	/**
 	 * Renders the view
 	 */
 	

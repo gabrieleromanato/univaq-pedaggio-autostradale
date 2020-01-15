@@ -46,6 +46,14 @@ public class Admin extends View {
 							Autostrade auto = new Autostrade();
 							auto.render();
 							break;
+						case "caselli":
+							Caselli caselli = new Caselli();
+							caselli.render();
+							break;
+						case "nuova autostrada":
+							NewAutostrada newauto = new NewAutostrada();
+							newauto.render();
+							break;
 						default:
 							break;
 					}
@@ -68,7 +76,7 @@ public class Admin extends View {
 	
 	
 	public void render() {
-		String[] items = { "Autostrade", "Caselli" };
+		String[] items = { "Autostrade", "Caselli", "Nuova autostrada", "Nuovo casello" };
 		Admin admin = new Admin(0, 0, 1024, 768, "Area Amministrativa");
 		admin.setBorders(5, 5, 5, 5);
 		admin.addLabel("Area Amministrativa", 364, 60, 273, 93);

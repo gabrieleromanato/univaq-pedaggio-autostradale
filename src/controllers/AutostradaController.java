@@ -81,6 +81,18 @@ public class AutostradaController {
 		return autostrade;
 	}
 	
+	/**
+	 * Inserts an Autostrada into the database
+	 * 
+	 * @param auto Autostrada model
+	 * @return Boolean
+	 */
+	
+	public boolean saveAutostrada(Autostrada auto) {
+		String query = "INSERT INTO autostrade (nome, codice) VALUES ('" + auto.nome + "','" + auto.codice + "')";
+		return db.writeData(query);
+	}
+	
 	
 
 }
