@@ -51,8 +51,12 @@ public class Admin extends View {
 							caselli.render();
 							break;
 						case "nuova autostrada":
-							NewAutostrada newauto = new NewAutostrada();
-							newauto.render();
+							NewAutostrada newAuto = new NewAutostrada();
+							newAuto.render();
+							break;
+						case "nuovo casello":
+							NewCasello newCasello = new NewCasello();
+							newCasello.render();
 							break;
 						default:
 							break;

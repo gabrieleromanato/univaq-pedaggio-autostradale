@@ -9,6 +9,12 @@ import javax.swing.JTextField;
 import controllers.AutostradaController;
 import models.Autostrada;
 
+/**
+ * The view for the Autostrada insert form
+ * @author gabrieleromanato
+ *
+ */
+
 public class NewAutostrada extends View {
 	
 	private static final long serialVersionUID = 1L;

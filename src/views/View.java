@@ -238,6 +238,17 @@ public class View extends JFrame implements ActionListener {
 	}
 	
 	/**
+	 * Adds a select box
+	 * @param values Items
+	 */
+	
+	public void addSelectBox(String[] values) {
+		JComboBox<String> list = new JComboBox<>(values);
+		this.content.add(list);
+		this.fields.add(list);
+	}
+	
+	/**
 	 * Renders the view
 	 */
 	
