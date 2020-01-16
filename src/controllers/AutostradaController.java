@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import classes.Database;
 import models.Casello;
+import models.ClasseTariffaria;
 import models.Autostrada;
 
 /**
@@ -18,11 +19,13 @@ public class AutostradaController {
 	private Database db;
 	private ArrayList<Casello> caselli;
 	private ArrayList<Autostrada> autostrade;
+	private ArrayList<ClasseTariffaria> classiTariffarie;
 
 	public AutostradaController() {
 		db = new Database();
 		caselli = setCaselli();
 		autostrade = setAutostrade();
+		classiTariffarie = setClassiTariffarie();
 	}
 	
 	/**
@@ -39,6 +42,24 @@ public class AutostradaController {
 		for(HashMap<String, String> result : results) {
 			Casello casello = new Casello(result.get("autostrada"), Double.parseDouble(result.get("progressiva_km")), result.get("nome"), result.get("codice"));
 			data.add(casello);
+		}
+		return data;
+	}
+	
+	/**
+	 * Sets the list of ClasseTariffaria models
+	 * 
+	 * @param None
+	 * @return ArrayList A list of ClasseTariffaria models
+	 */
+	
+	private ArrayList<ClasseTariffaria> setClassiTariffarie() {
+		String query = "SELECT * FROM classi_tariffarie";
+		ArrayList <HashMap<String, String>> results = db.readData(query);
+		ArrayList<ClasseTariffaria> data = new ArrayList<>();
+		for(HashMap<String, String> result : results) {
+			ClasseTariffaria classe = new ClasseTariffaria(result.get("nome"), result.get("esempi"));
+			data.add(classe);
 		}
 		return data;
 	}
@@ -79,6 +100,15 @@ public class AutostradaController {
 	
 	public ArrayList<Autostrada> getAutostrade() {
 		return autostrade;
+	}
+	
+	/**
+	 * 
+	 * @return List of ClassiTariffarie
+	 */
+	
+	public ArrayList<ClasseTariffaria> getClassiTariffarie() {
+		return classiTariffarie;
 	}
 	
 	/**
