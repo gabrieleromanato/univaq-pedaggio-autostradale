@@ -1,7 +1,7 @@
 #
 # SQL Export
 # Created by Querious (201069)
-# Created: 12 January 2020 at 10:02:39 CET
+# Created: 16 January 2020 at 13:33:47 CET
 # Encoding: Unicode (UTF-8)
 #
 
@@ -15,7 +15,7 @@ CREATE TABLE `autostrade` (
   `nome` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `codice` varchar(3) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `caselli` (
@@ -25,7 +25,15 @@ CREATE TABLE `caselli` (
   `nome` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `codice` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=513 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=514 DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `classi_tariffarie` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `esempi` text CHARACTER SET utf8 COLLATE utf8_general_ci,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `pagamenti` (
@@ -603,6 +611,18 @@ INSERT INTO `caselli` (`id`, `autostrada`, `progressiva_km`, `nome`, `codice`) V
 	(510,'A58',18.56,'Paullo','383'),
 	(511,'A58',29.40,'Vizzolo Predabissi','384');
 ALTER TABLE `caselli` ENABLE KEYS;
+UNLOCK TABLES;
+
+
+LOCK TABLES `classi_tariffarie` WRITE;
+ALTER TABLE `classi_tariffarie` DISABLE KEYS;
+INSERT INTO `classi_tariffarie` (`id`, `nome`, `esempi`) VALUES 
+	(1,'Classe A','Motocicli da 150 cc. ed oltre. Motocarrozzette da 250 cc. ed oltre.\nAutovetture\nMotocarri, Motofurgoni, Autofurgoni, Autocarri\n'),
+	(2,'Classe B','Autobus, auto-caravan, autocarri'),
+	(3,'Classe 3','Autovetture con carrello o caravan ad un asse\nAutobus, autocarri, autoarticolati a 3 assi'),
+	(4,'Classe 4','Autovetture con carrello o caravan a due assi\nAutocarri, autoarticolati, autotreni a 4 assi'),
+	(5,'Classe 5','Autoarticolati e autotreni a 5 o più assi');
+ALTER TABLE `classi_tariffarie` ENABLE KEYS;
 UNLOCK TABLES;
 
 
