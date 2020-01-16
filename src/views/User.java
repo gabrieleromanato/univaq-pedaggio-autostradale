@@ -1,19 +1,38 @@
 package views;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 
+import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.filechooser.FileSystemView;
 
 import controllers.AutostradaController;
+import helpers.CSV;
 import models.Casello;
 import models.ClasseTariffaria;
 
 public class User extends View {
 	
 	private static final long serialVersionUID = 1L;
+	private File datiVeicolo;
 
 	public User() {
 		
+	}
+	
+	public void setDatiVeicolo(File data) {
+		datiVeicolo = data;
+	}
+	
+	public File getDatiVeicolo() {
+		return datiVeicolo;
 	}
 
 	public User(int x, int y, int width, int height, String title) {
@@ -58,6 +77,51 @@ public class User extends View {
 		this.content.add(list);
 		this.fields.add(list);
 	}
+	
+	private void actions(User instance) {
+		JButton fileChoose = (JButton) instance.fields.get(3);
+		JButton calculate = (JButton) instance.fields.get(7);
+		
+		fileChoose.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+				jfc.setDialogTitle("Scegli un file in formato CSV");
+				jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+				jfc.setAcceptAllFileFilterUsed(false);
+				FileNameExtensionFilter filter = new FileNameExtensionFilter("CSV Files", "csv");
+				jfc.addChoosableFileFilter(filter);
+				int returnValue = jfc.showOpenDialog(null);
+				if (returnValue == JFileChooser.APPROVE_OPTION) {
+					File selectedFile = jfc.getSelectedFile();
+					instance.setDatiVeicolo(selectedFile);
+				}
+			}
+		});
+		
+		calculate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				File data = instance.getDatiVeicolo();
+				JComboBox start = (JComboBox) instance.fields.get(1);
+				JComboBox arrival = (JComboBox) instance.fields.get(2);
+				
+				String startSelected = start.getSelectedItem().toString();
+				String arrivalSelected = arrival.getSelectedItem().toString();
+				
+				boolean valid = true;
+				
+				if(data == null || startSelected.length() == 0 || arrivalSelected.length() == 0) {
+					valid = false;
+				}
+				if(!valid) {
+					JOptionPane.showMessageDialog(calculate, "I dati inseriti non sono validi");
+				} else {
+					
+					String[] keys = { "targa", "classe", "assi", "altezza" };
+					HashMap<String, String> vehicleData = CSV.read(data, keys);
+				}
+			}
+		});
+	}
 
 	
 	/**
@@ -73,11 +137,12 @@ public class User extends View {
 		user.addLabel("Area Utente", 364, 60, 273, 93);
 		user.addSelectBox(getCaselloList(), 364, 170, 281, 34);
 		user.addSelectBox(getCaselloList(), 364, 220, 281, 34);
-		user.addSelectBox(getClassiTariffarieList(), 364, 280, 281, 34);
+		user.addButton("Scegli file", 364, 270, 200, 34);
 		user.addLabel("Partenza", 250, 168, 250, 34);
 		user.addLabel("Arrivo", 250, 220, 250, 34);
-		user.addLabel("Classe veicolo", 250, 280, 292, 34);
+		user.addLabel("Dati veicolo", 250, 270, 250, 34);
 		user.addButton("Calcola pedaggio", 364, 354, 200, 34);
+		actions(user);
 		user.initView();
 	}
 

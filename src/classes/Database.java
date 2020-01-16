@@ -82,6 +82,7 @@ public class Database implements DataHandler {
 	                			datum.put(name, Integer.toString(rs.getInt(name)));
 	                			break;
 	                		case "varchar":
+	                		case "text":	
 	                			datum.put(name, rs.getString(name));
 	                			break;
 	                		case "decimal":
