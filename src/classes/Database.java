@@ -41,6 +41,7 @@ public class Database implements DataHandler {
 	 */
 	
 	
+	@SuppressWarnings("resource")
 	public ArrayList<HashMap<String, String>> readData( String query ) {
 		 	Statement stmt = null;
 	        ResultSet rs = null;

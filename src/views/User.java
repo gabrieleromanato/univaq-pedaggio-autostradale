@@ -55,6 +55,7 @@ public class User extends View {
 		return data;
 	}
 	
+	@SuppressWarnings("unused")
 	private String[] getClassiTariffarieList() {
 		AutostradaController autoCtrl = new AutostradaController();
 		ArrayList<ClasseTariffaria> items = autoCtrl.getClassiTariffarie();
@@ -101,7 +102,9 @@ public class User extends View {
 		calculate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				File data = instance.getDatiVeicolo();
+				@SuppressWarnings("rawtypes")
 				JComboBox start = (JComboBox) instance.fields.get(1);
+				@SuppressWarnings("rawtypes")
 				JComboBox arrival = (JComboBox) instance.fields.get(2);
 				
 				String startSelected = start.getSelectedItem().toString();
@@ -118,6 +121,7 @@ public class User extends View {
 					
 					String[] keys = { "targa", "classe", "assi", "altezza" };
 					HashMap<String, String> vehicleData = CSV.read(data, keys);
+					System.out.print(vehicleData);
 				}
 			}
 		});

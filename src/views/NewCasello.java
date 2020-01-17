@@ -70,6 +70,7 @@ public class NewCasello extends View {
 		JTextField nome = (JTextField) fields.get(1);
 		JTextField codice = (JTextField) fields.get(2);
 		JTextField km = (JTextField) fields.get(3);
+		@SuppressWarnings("rawtypes")
 		JComboBox autostrada = (JComboBox) fields.get(4);
 		
 		String name = nome.getText();

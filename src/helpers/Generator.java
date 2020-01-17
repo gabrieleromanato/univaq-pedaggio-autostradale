@@ -1,6 +1,7 @@
 package helpers;
 
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  *  Helper methods and utilities
@@ -34,6 +35,19 @@ public class Generator {
 		sb.append(number);
 		
 		return sb.toString();
+	}
+	
+	/**
+	 * Creates a random number between min and max
+	 * 
+	 * @param min Minimum value
+	 * @param max Maximum value
+	 * @return int Random number
+	 */
+	
+	public static int createNumber(int min, int max) {
+		int randomInt = ThreadLocalRandom.current().nextInt(min, max);
+		return randomInt;
 	}
 
 }
