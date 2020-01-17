@@ -17,6 +17,7 @@ import controllers.AutostradaController;
 import helpers.CSV;
 import models.Casello;
 import models.ClasseTariffaria;
+import models.Veicolo;
 
 public class User extends View {
 	
@@ -119,9 +120,22 @@ public class User extends View {
 					JOptionPane.showMessageDialog(calculate, "I dati inseriti non sono validi");
 				} else {
 					
-					String[] keys = { "targa", "classe", "assi", "altezza" };
+					String[] keys = { "modello", "marca", "anno", "targa", "assi", "peso", "altezza", "classe" };
 					HashMap<String, String> vehicleData = CSV.read(data, keys);
-					System.out.print(vehicleData);
+					Veicolo veicolo = new Veicolo(
+							vehicleData.get("modello"), 
+							vehicleData.get("marca"), 
+							Integer.parseInt(vehicleData.get("anno")),
+							vehicleData.get("targa"),
+							Integer.parseInt(vehicleData.get("assi")),
+							Integer.parseInt(vehicleData.get("peso")),
+							Integer.parseInt(vehicleData.get("altezza")),
+							vehicleData.get("classe")
+							
+					);
+					System.out.println(vehicleData);
+					System.out.println(veicolo.modello + ", " + veicolo.marca + ", " + veicolo.anno + ", " + veicolo.targa + ", " + veicolo.assi + ", " +
+					veicolo.peso + ", " + veicolo.altezza + ", " + veicolo.classe);
 				}
 			}
 		});

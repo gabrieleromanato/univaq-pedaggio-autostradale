@@ -11,13 +11,14 @@ public class Veicolo extends Model {
 	public int assi;
 	public int peso;
 	public int altezza;
+	public String classe;
 
 	public Veicolo() {
-		this("AX", "Fiat", Generator.createNumber(1990, 2010), Generator.createPlateNumber(), Generator.createNumber(2, 5), Generator.createNumber(100, 500),
-				Generator.createNumber(120, 180));
+		this("Panda", "Fiat", Generator.createNumber(1990, 2010), Generator.createPlateNumber(), Generator.createNumber(2, 5), Generator.createNumber(100, 500),
+				Generator.createNumber(120, 180), Generator.getRandomClasseTariffaria());
 	}
 
-	public Veicolo(String modello, String marca, int anno, String targa, int assi, int peso, int altezza) {
+	public Veicolo(String modello, String marca, int anno, String targa, int assi, int peso, int altezza, String classe) {
 		this.modello = modello;
 		this.marca = marca;
 		this.anno = anno;
@@ -25,6 +26,7 @@ public class Veicolo extends Model {
 		this.assi = assi;
 		this.peso = peso;
 		this.altezza = altezza;
+		this.classe = classe;
 	}
 	
 	
