@@ -133,9 +133,14 @@ public class User extends View {
 							vehicleData.get("classe")
 							
 					);
+					AutostradaController autostrada = new AutostradaController();
+					double[] tariffe = { 10, 20, 30, 40, 50 };
+					autostrada.setTariffe(tariffe);
+					autostrada.setMapTariffe();
 					System.out.println(vehicleData);
 					System.out.println(veicolo.modello + ", " + veicolo.marca + ", " + veicolo.anno + ", " + veicolo.targa + ", " + veicolo.assi + ", " +
 					veicolo.peso + ", " + veicolo.altezza + ", " + veicolo.classe);
+					System.out.println(autostrada.getMapTariffe());
 				}
 			}
 		});

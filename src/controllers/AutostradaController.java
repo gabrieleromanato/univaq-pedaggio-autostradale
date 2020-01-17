@@ -20,12 +20,49 @@ public class AutostradaController {
 	private ArrayList<Casello> caselli;
 	private ArrayList<Autostrada> autostrade;
 	private ArrayList<ClasseTariffaria> classiTariffarie;
+	private ArrayList<HashMap<String, Double>> mapTariffe;
+	private double[] tariffe;
 
 	public AutostradaController() {
 		db = new Database();
 		caselli = setCaselli();
 		autostrade = setAutostrade();
 		classiTariffarie = setClassiTariffarie();
+	}
+	
+	public void setTariffe(double[] tariffe) {
+		this.tariffe = tariffe;
+	}
+	
+	public double[] getTariffe() {
+		return tariffe;
+	}
+	
+	/**
+	 * Sets the map of tariffe and classi
+	 * @param None
+	 * @return ArrayList Map of tariffe and classi
+	 */
+	
+	public void setMapTariffe() {
+		ArrayList<HashMap<String, Double>> map = new ArrayList<HashMap<String, Double>>();
+		
+		int i = -1;
+		
+		for(ClasseTariffaria c: classiTariffarie) {
+			i++;
+			HashMap<String, Double> cl = new HashMap<String, Double>();
+			cl.put(c.nome, tariffe[i]);
+			map.add(cl);
+		}
+		
+		
+		mapTariffe = map;
+		
+	}
+	
+	public ArrayList<HashMap<String, Double>> getMapTariffe() {
+		return mapTariffe;
 	}
 	
 	/**
