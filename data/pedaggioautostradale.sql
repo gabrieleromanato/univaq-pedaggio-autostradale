@@ -1,7 +1,7 @@
 #
 # SQL Export
 # Created by Querious (201069)
-# Created: 16 January 2020 at 13:33:47 CET
+# Created: 18 January 2020 at 10:38:58 CET
 # Encoding: Unicode (UTF-8)
 #
 
@@ -43,7 +43,7 @@ CREATE TABLE `pagamenti` (
   `orario` datetime DEFAULT NULL,
   `tipologia` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 
 
@@ -617,11 +617,11 @@ UNLOCK TABLES;
 LOCK TABLES `classi_tariffarie` WRITE;
 ALTER TABLE `classi_tariffarie` DISABLE KEYS;
 INSERT INTO `classi_tariffarie` (`id`, `nome`, `esempi`) VALUES 
-	(1,'Classe A','Motocicli da 150 cc. ed oltre. Motocarrozzette da 250 cc. ed oltre.\nAutovetture\nMotocarri, Motofurgoni, Autofurgoni, Autocarri\n'),
-	(2,'Classe B','Autobus, auto-caravan, autocarri'),
-	(3,'Classe 3','Autovetture con carrello o caravan ad un asse\nAutobus, autocarri, autoarticolati a 3 assi'),
-	(4,'Classe 4','Autovetture con carrello o caravan a due assi\nAutocarri, autoarticolati, autotreni a 4 assi'),
-	(5,'Classe 5','Autoarticolati e autotreni a 5 o più assi');
+	(1,'A','Motocicli da 150 cc. ed oltre. Motocarrozzette da 250 cc. ed oltre.\nAutovetture\nMotocarri, Motofurgoni, Autofurgoni, Autocarri\n'),
+	(2,'B','Autobus, auto-caravan, autocarri'),
+	(3,'3','Autovetture con carrello o caravan ad un asse\nAutobus, autocarri, autoarticolati a 3 assi'),
+	(4,'4','Autovetture con carrello o caravan a due assi\nAutocarri, autoarticolati, autotreni a 4 assi'),
+	(5,'5','Autoarticolati e autotreni a 5 o più assi');
 ALTER TABLE `classi_tariffarie` ENABLE KEYS;
 UNLOCK TABLES;
 

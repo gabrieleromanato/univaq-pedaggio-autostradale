@@ -16,8 +16,8 @@ import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.ScrollPaneConstants;
 
-import controllers.AutostradaController;
-import models.Casello;
+import controllers.Autostrada;
+import models.CaselloModel;
 
 public class Caselli extends View {
 	
@@ -67,11 +67,11 @@ public class Caselli extends View {
 		}
 	}
 
-public void addList(ArrayList<Casello> items) {
+public void addList(ArrayList<CaselloModel> items) {
 	JPanel pane = new JPanel();
 	pane.setBounds(364, 250, 400, 400);
 	DefaultListModel<String> listModel = new DefaultListModel<>();
-	for(Casello casello : items) {
+	for(CaselloModel casello : items) {
 		listModel.addElement(casello.nome);
 	}
 	JList<String> list = new JList<>(listModel);
@@ -88,7 +88,7 @@ public void addList(ArrayList<Casello> items) {
 	this.fields.add(list);
 }
 
-public void addTable(ArrayList<Casello> items) {
+public void addTable(ArrayList<CaselloModel> items) {
 	JPanel pane = new JPanel();
 	pane.setBounds(300, 250, 580, 400);
 	String[] headers = {"Autostrada", "Km", "Nome", "Codice"};
@@ -96,7 +96,7 @@ public void addTable(ArrayList<Casello> items) {
 	
 	
 		for(int i = 0; i < items.size(); i++) {
-			Casello casello = items.get(i);
+			CaselloModel casello = items.get(i);
 			
 			
 			for(int j = 0; j < headers.length; j++) {
@@ -121,8 +121,8 @@ public void addTable(ArrayList<Casello> items) {
  */
 
 public void render() {
-	AutostradaController autoCtrl = new AutostradaController();
-	ArrayList<Casello> caselli = autoCtrl.getCaselli();
+	Autostrada autoCtrl = new Autostrada();
+	ArrayList<CaselloModel> caselli = autoCtrl.getCaselli();
 	String[] items = { "Home" };
 	Caselli casello = new Caselli(0, 0, 1024, 768, "Caselli");
 	casello.setBorders(5, 5, 5, 5);

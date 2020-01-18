@@ -15,8 +15,8 @@ import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.ScrollPaneConstants;
 
-import controllers.AutostradaController;
-import models.Autostrada;
+import controllers.Autostrada;
+import models.AutostradaModel;
 
 public class Autostrade extends View {
 	
@@ -67,11 +67,11 @@ public class Autostrade extends View {
 	}
 
 
-public void addList(ArrayList<Autostrada> items) {
+public void addList(ArrayList<AutostradaModel> items) {
 	JPanel pane = new JPanel();
 	pane.setBounds(364, 250, 400, 4004);
 	DefaultListModel<String> listModel = new DefaultListModel<>();
-	for(Autostrada auto : items) {
+	for(AutostradaModel auto : items) {
 		listModel.addElement(auto.nome);
 	}
 	JList<String> list = new JList<>(listModel);
@@ -93,8 +93,8 @@ public void addList(ArrayList<Autostrada> items) {
 	 */
 	
 	public void render() {
-		AutostradaController autoCtrl = new AutostradaController();
-		ArrayList<Autostrada> autostrade = autoCtrl.getAutostrade();
+		Autostrada autoCtrl = new Autostrada();
+		ArrayList<AutostradaModel> autostrade = autoCtrl.getAutostrade();
 		String[] items = { "Home" };
 		Autostrade auto = new Autostrade(0, 0, 1024, 768, "Autostrade");
 		auto.setBorders(5, 5, 5, 5);

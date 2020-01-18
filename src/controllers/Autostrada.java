@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import classes.Database;
-import models.Casello;
+import models.CaselloModel;
 import models.ClasseTariffaria;
-import models.Autostrada;
+import models.AutostradaModel;
 
 /**
  * The Autostrada entity controller
@@ -14,55 +14,17 @@ import models.Autostrada;
  *
  */
 
-public class AutostradaController {
+public class Autostrada {
 	
 	private Database db;
-	private ArrayList<Casello> caselli;
-	private ArrayList<Autostrada> autostrade;
-	private ArrayList<ClasseTariffaria> classiTariffarie;
-	private ArrayList<HashMap<String, Double>> mapTariffe;
-	private double[] tariffe;
-
-	public AutostradaController() {
+	private ArrayList<CaselloModel> caselli;
+	private ArrayList<AutostradaModel> autostrade;
+	public static final double TARIFFA_UNITARIA = 0.5;
+	
+	public Autostrada () {
 		db = new Database();
 		caselli = setCaselli();
 		autostrade = setAutostrade();
-		classiTariffarie = setClassiTariffarie();
-	}
-	
-	public void setTariffe(double[] tariffe) {
-		this.tariffe = tariffe;
-	}
-	
-	public double[] getTariffe() {
-		return tariffe;
-	}
-	
-	/**
-	 * Sets the map of tariffe and classi
-	 * @param None
-	 * @return ArrayList Map of tariffe and classi
-	 */
-	
-	public void setMapTariffe() {
-		ArrayList<HashMap<String, Double>> map = new ArrayList<HashMap<String, Double>>();
-		
-		int i = -1;
-		
-		for(ClasseTariffaria c: classiTariffarie) {
-			i++;
-			HashMap<String, Double> cl = new HashMap<String, Double>();
-			cl.put(c.nome, tariffe[i]);
-			map.add(cl);
-		}
-		
-		
-		mapTariffe = map;
-		
-	}
-	
-	public ArrayList<HashMap<String, Double>> getMapTariffe() {
-		return mapTariffe;
 	}
 	
 	/**
@@ -72,12 +34,12 @@ public class AutostradaController {
 	 * @return ArrayList A list of Casello models
 	 */
 	
-	private ArrayList<Casello> setCaselli() {
+	private ArrayList<CaselloModel> setCaselli() {
 		String query = "SELECT * FROM caselli";
 		ArrayList <HashMap<String, String>> results = db.readData(query);
-		ArrayList<Casello> data = new ArrayList<>();
+		ArrayList<CaselloModel> data = new ArrayList<>();
 		for(HashMap<String, String> result : results) {
-			Casello casello = new Casello(result.get("autostrada"), Double.parseDouble(result.get("progressiva_km")), result.get("nome"), result.get("codice"));
+			CaselloModel casello = new CaselloModel(result.get("autostrada"), Double.parseDouble(result.get("progressiva_km")), result.get("nome"), result.get("codice"));
 			data.add(casello);
 		}
 		return data;
@@ -90,6 +52,7 @@ public class AutostradaController {
 	 * @return ArrayList A list of ClasseTariffaria models
 	 */
 	
+	@SuppressWarnings("unused")
 	private ArrayList<ClasseTariffaria> setClassiTariffarie() {
 		String query = "SELECT * FROM classi_tariffarie";
 		ArrayList <HashMap<String, String>> results = db.readData(query);
@@ -106,7 +69,7 @@ public class AutostradaController {
 	 * @return List of caselli
 	 */
 	
-	public ArrayList<Casello> getCaselli() {
+	public ArrayList<CaselloModel> getCaselli() {
 		return caselli;
 	}
 	
@@ -117,12 +80,12 @@ public class AutostradaController {
 	 * @return ArrayList A list of Autostrada models
 	 */
 	
-	private ArrayList<Autostrada> setAutostrade() {
+	private ArrayList<AutostradaModel> setAutostrade() {
 		String query = "SELECT * FROM autostrade";
 		ArrayList <HashMap<String, String>> results = db.readData(query);
-		ArrayList<Autostrada> data = new ArrayList<>();
+		ArrayList<AutostradaModel> data = new ArrayList<>();
 		for(HashMap<String, String> result : results) {
-			Autostrada auto = new Autostrada(result.get("nome"), result.get("codice"));
+			AutostradaModel auto = new AutostradaModel(result.get("nome"), result.get("codice"));
 			data.add(auto);
 		}
 		
@@ -135,17 +98,8 @@ public class AutostradaController {
 	 */
 	
 	
-	public ArrayList<Autostrada> getAutostrade() {
+	public ArrayList<AutostradaModel> getAutostrade() {
 		return autostrade;
-	}
-	
-	/**
-	 * 
-	 * @return List of ClassiTariffarie
-	 */
-	
-	public ArrayList<ClasseTariffaria> getClassiTariffarie() {
-		return classiTariffarie;
 	}
 	
 	/**
@@ -155,7 +109,7 @@ public class AutostradaController {
 	 * @return Boolean
 	 */
 	
-	public boolean saveAutostrada(Autostrada auto) {
+	public boolean saveAutostrada(AutostradaModel auto) {
 		String query = "INSERT INTO autostrade (nome, codice) VALUES ('" + auto.nome + "','" + auto.codice + "')";
 		return db.writeData(query);
 	}

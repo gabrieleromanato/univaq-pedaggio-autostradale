@@ -13,10 +13,14 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.filechooser.FileSystemView;
 
-import controllers.AutostradaController;
+import controllers.Autostrada;
+import controllers.Casello;
+import controllers.Pagamenti;
+import controllers.Pedaggio;
+import controllers.Percorso;
 import helpers.CSV;
-import models.Casello;
-import models.ClasseTariffaria;
+import models.CaselloModel;
+import models.Pagamento;
 import models.Veicolo;
 
 public class User extends View {
@@ -42,29 +46,13 @@ public class User extends View {
 	}
 	
 	private String[] getCaselloList() {
-		AutostradaController autoCtrl = new AutostradaController();
-		ArrayList<Casello> items = autoCtrl.getCaselli();
+		Autostrada autoCtrl = new Autostrada();
+		ArrayList<CaselloModel> items = autoCtrl.getCaselli();
 		String[] data = new String[items.size()];
 		
 		int i = -1;
 		
-		for(Casello a : items) {
-			i++;
-			data[i] = a.nome;
-		}
-		
-		return data;
-	}
-	
-	@SuppressWarnings("unused")
-	private String[] getClassiTariffarieList() {
-		AutostradaController autoCtrl = new AutostradaController();
-		ArrayList<ClasseTariffaria> items = autoCtrl.getClassiTariffarie();
-		String[] data = new String[items.size()];
-		
-		int i = -1;
-		
-		for(ClasseTariffaria a : items) {
+		for(CaselloModel a : items) {
 			i++;
 			data[i] = a.nome;
 		}
@@ -120,7 +108,7 @@ public class User extends View {
 					JOptionPane.showMessageDialog(calculate, "I dati inseriti non sono validi");
 				} else {
 					
-					String[] keys = { "modello", "marca", "anno", "targa", "assi", "peso", "altezza", "classe" };
+					String[] keys = { "modello", "marca", "anno", "targa", "assi", "peso", "altezza", "classe", "classe_ambientale" };
 					HashMap<String, String> vehicleData = CSV.read(data, keys);
 					Veicolo veicolo = new Veicolo(
 							vehicleData.get("modello"), 
@@ -130,17 +118,33 @@ public class User extends View {
 							Integer.parseInt(vehicleData.get("assi")),
 							Integer.parseInt(vehicleData.get("peso")),
 							Integer.parseInt(vehicleData.get("altezza")),
-							vehicleData.get("classe")
+							vehicleData.get("classe"),
+							vehicleData.get("classe_ambientale")
 							
 					);
-					AutostradaController autostrada = new AutostradaController();
-					double[] tariffe = { 10, 20, 30, 40, 50 };
-					autostrada.setTariffe(tariffe);
-					autostrada.setMapTariffe();
-					System.out.println(vehicleData);
-					System.out.println(veicolo.modello + ", " + veicolo.marca + ", " + veicolo.anno + ", " + veicolo.targa + ", " + veicolo.assi + ", " +
-					veicolo.peso + ", " + veicolo.altezza + ", " + veicolo.classe);
-					System.out.println(autostrada.getMapTariffe());
+					
+					Pedaggio pedaggio = new Pedaggio(Autostrada.TARIFFA_UNITARIA, 0.50, veicolo.classe, veicolo.classeAmbientale);
+					Casello casello = new Casello();
+					casello.setStartKm(startSelected);
+					casello.setEndKm(arrivalSelected);
+					Percorso percorso = new Percorso(casello.getEndKm(), casello.getStartKm());
+					percorso.calculateTravelKm();
+					double amt = pedaggio.calculate(percorso.getTravelKm());
+					
+					String msg = "L'importo da pagare è di Euro " + amt + ". Procedere al pagamento?";
+					int input = JOptionPane.showConfirmDialog(calculate, msg, "Pagamento", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE);
+					
+					if(input == 0) {
+						Pagamento pagamento = new Pagamento(veicolo.targa, amt, "contanti");
+						Pagamenti pagamenti = new Pagamenti();
+						
+						if(pagamenti.savePayment(pagamento)) {
+							JOptionPane.showMessageDialog(calculate, "Grazie e buon viaggio");
+						} else {
+							JOptionPane.showMessageDialog(calculate, "Errore nel pagamento");
+						}
+					}
+					
 				}
 			}
 		});

@@ -8,11 +8,11 @@ import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import controllers.AutostradaController;
-import controllers.CaselloController;
+import controllers.Autostrada;
+import controllers.Casello;
 import helpers.Validator;
-import models.Autostrada;
-import models.Casello;
+import models.AutostradaModel;
+import models.CaselloModel;
 
 /**
  * The view of the Casello insert form
@@ -34,13 +34,13 @@ public class NewCasello extends View {
 	}
 	
 	private String[] getAutostradeList() {
-		AutostradaController autoCtrl = new AutostradaController();
-		ArrayList<Autostrada> items = autoCtrl.getAutostrade();
+		Autostrada autoCtrl = new Autostrada();
+		ArrayList<AutostradaModel> items = autoCtrl.getAutostrade();
 		String[] data = new String[items.size()];
 		
 		int i = -1;
 		
-		for(Autostrada a : items) {
+		for(AutostradaModel a : items) {
 			i++;
 			data[i] = a.codice;
 		}
@@ -95,8 +95,8 @@ public class NewCasello extends View {
 		if(!valid) {
 			JOptionPane.showMessageDialog(button, "I dati inseriti non sono validi");
 		} else {
-			Casello casello = new Casello(autoSelected, Double.parseDouble(kmValue), name, code);
-			CaselloController caselloCtrl = new CaselloController();
+			CaselloModel casello = new CaselloModel(autoSelected, Double.parseDouble(kmValue), name, code);
+			Casello caselloCtrl = new Casello();
 			
 			if(caselloCtrl.saveCasello(casello)) {
 				JOptionPane.showMessageDialog(button, "Salvataggio riuscito");

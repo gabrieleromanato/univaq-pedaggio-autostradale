@@ -6,8 +6,8 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import controllers.AutostradaController;
-import models.Autostrada;
+import controllers.Autostrada;
+import models.AutostradaModel;
 
 /**
  * The view for the Autostrada insert form
@@ -57,8 +57,8 @@ public class NewAutostrada extends View {
 		if(!valid) {
 			JOptionPane.showMessageDialog(button, "I dati inseriti non sono validi");
 		} else {
-			Autostrada auto = new Autostrada(name, code);
-			AutostradaController autoCtrl = new AutostradaController();
+			AutostradaModel auto = new AutostradaModel(name, code);
+			Autostrada autoCtrl = new Autostrada();
 			
 			if(autoCtrl.saveAutostrada(auto)) {
 				JOptionPane.showMessageDialog(button, "Salvataggio riuscito");
