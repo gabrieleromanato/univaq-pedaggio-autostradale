@@ -3,6 +3,9 @@ package views;
 import java.awt.event.ActionEvent;
 import javax.swing.*;
 
+import controllers.AdminController;
+import controllers.UserController;
+
 public class Login extends View {
 	
 	private static final long serialVersionUID = 1L;
@@ -42,14 +45,20 @@ public class Login extends View {
 		if(username.equals("admin") && userPass.equals("admin")) {
 			
 			Admin admin = new Admin();
-			admin.render();
+			AdminController adminCtrl = new AdminController();
+			
+			adminCtrl.setView(admin);
+			adminCtrl.renderView();
 			
 			
 			
 		} else if (username.equals("user") && userPass.equals("user")) {
 			
 				User userClass = new User();
-				userClass.render();
+				UserController userCtrl = new UserController();
+				
+				userCtrl.setView(userClass);
+				userCtrl.renderView();
 			
 		} else {
 			JButton button = (JButton) fields.get(5);

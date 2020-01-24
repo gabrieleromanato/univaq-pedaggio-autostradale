@@ -6,14 +6,19 @@ package app;
  *
  */
 
-import views.Login;
+import views.*;
+import controllers.*;
+
 
 
 public class App {
 
 	public static void main(String[] args) {
 		Login login = new Login();
-		login.render();
+		LoginController loginCtrl = new LoginController();
+		
+		loginCtrl.setView(login);
+		loginCtrl.renderView();
 	}
 
 }

@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import classes.Database;
 import models.CaselloModel;
+import views.Caselli;
 
 /**
  * Handles Casello's distances
@@ -12,11 +13,12 @@ import models.CaselloModel;
  *
  */
 
-public class Casello {
+public class Casello extends Controller {
 	
 	private Database db;
 	private double startKm;
 	private double endKm;
+	protected Caselli view;
 
 	public Casello() {
 		db = new Database();
@@ -25,6 +27,14 @@ public class Casello {
 	public Casello(double startKm, double endKm) {
 		this.startKm = startKm;
 		this.endKm = endKm;
+	}
+	
+	public void setView(Caselli view) {
+		this.view = view;
+	}
+	
+	public void renderView() {
+		view.render();
 	}
 	
 	public void setStartKm(String casello) {

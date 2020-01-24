@@ -6,6 +6,7 @@ import java.util.HashMap;
 import classes.Database;
 import models.CaselloModel;
 import models.ClasseTariffaria;
+import views.Autostrade;
 import models.AutostradaModel;
 
 /**
@@ -14,17 +15,26 @@ import models.AutostradaModel;
  *
  */
 
-public class Autostrada {
+public class Autostrada extends Controller {
 	
 	private Database db;
 	private ArrayList<CaselloModel> caselli;
 	private ArrayList<AutostradaModel> autostrade;
 	public static final double TARIFFA_UNITARIA = 0.5;
+	protected Autostrade view;
 	
 	public Autostrada () {
 		db = new Database();
 		caselli = setCaselli();
 		autostrade = setAutostrade();
+	}
+	
+	public void setView(Autostrade view) {
+		this.view = view;
+	}
+	
+	public void renderView() {
+		view.render();
 	}
 	
 	/**

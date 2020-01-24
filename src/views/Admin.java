@@ -7,6 +7,11 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
+import controllers.Autostrada;
+import controllers.Casello;
+import controllers.NewAutostradaController;
+import controllers.NewCaselloController;
+
 
 
 public class Admin extends View {
@@ -44,19 +49,28 @@ public class Admin extends View {
 					switch(text) {
 						case "autostrade":
 							Autostrade auto = new Autostrade();
-							auto.render();
+							Autostrada autoCtrl = new Autostrada();
+							autoCtrl.setView(auto);
+							autoCtrl.renderView();
 							break;
 						case "caselli":
 							Caselli caselli = new Caselli();
-							caselli.render();
+							Casello caselloCtrl = new Casello();
+							caselloCtrl.setView(caselli);
+							caselloCtrl.renderView();
 							break;
 						case "nuova autostrada":
 							NewAutostrada newAuto = new NewAutostrada();
-							newAuto.render();
+							NewAutostradaController autoCtrl2 = new NewAutostradaController();
+							autoCtrl2.setView(newAuto);
+							autoCtrl2.renderView();
 							break;
 						case "nuovo casello":
 							NewCasello newCasello = new NewCasello();
-							newCasello.render();
+							NewCaselloController caselloCtrl2 = new NewCaselloController();
+							caselloCtrl2.setView(newCasello);
+							caselloCtrl2.renderView();
+							
 							break;
 						default:
 							break;
