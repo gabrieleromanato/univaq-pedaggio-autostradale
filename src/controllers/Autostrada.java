@@ -29,9 +29,18 @@ public class Autostrada extends Controller {
 		autostrade = setAutostrade();
 	}
 	
+	/**
+	 * Sets the view instance
+	 * @param view A view instance
+	 */
+	
 	public void setView(Autostrade view) {
 		this.view = view;
 	}
+	
+	/**
+	 * Renders the view
+	 */
 	
 	public void renderView() {
 		view.render();

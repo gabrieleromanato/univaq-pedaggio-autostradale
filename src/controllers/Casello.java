@@ -29,9 +29,18 @@ public class Casello extends Controller {
 		this.endKm = endKm;
 	}
 	
+	/**
+	 * Sets the view instance
+	 * @param view A view instance
+	 */
+	
 	public void setView(Caselli view) {
 		this.view = view;
 	}
+	
+	/**
+	 * Renders the view
+	 */
 	
 	public void renderView() {
 		view.render();
