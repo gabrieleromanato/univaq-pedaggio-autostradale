@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -13,12 +14,16 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.filechooser.FileSystemView;
 
+import classes.PedaggioBase;
+import classes.PedaggioFactory;
 import controllers.Autostrada;
 import controllers.Casello;
 import controllers.Pagamenti;
 import controllers.Pedaggio;
 import controllers.Percorso;
 import helpers.CSV;
+import helpers.Formatter;
+import interfaces.PedaggioInterface;
 import models.CaselloModel;
 import models.Pagamento;
 import models.Veicolo;
@@ -123,15 +128,16 @@ public class User extends View {
 							
 					);
 					
-					Pedaggio pedaggio = new Pedaggio(Autostrada.TARIFFA_UNITARIA, 0.50, veicolo.classe, veicolo.classeAmbientale);
+					PedaggioInterface pedaggio = PedaggioFactory.getInstance("default", Autostrada.TARIFFA_UNITARIA, 0.50, veicolo.classe, veicolo.classeAmbientale);
 					Casello casello = new Casello();
 					casello.setStartKm(startSelected);
 					casello.setEndKm(arrivalSelected);
 					Percorso percorso = new Percorso(casello.getEndKm(), casello.getStartKm());
 					percorso.calculateTravelKm();
 					double amt = pedaggio.calculate(percorso.getTravelKm());
+					String total = Formatter.formatCurrency(amt, new Locale("IT") ).replaceAll("[^0-9,]+", "");
 					
-					String msg = "L'importo da pagare è di Euro " + amt + ". Procedere al pagamento?";
+					String msg = "L'importo da pagare è di Euro " + total + ". Procedere al pagamento?";
 					int input = JOptionPane.showConfirmDialog(calculate, msg, "Pagamento", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE);
 					
 					if(input == 0) {

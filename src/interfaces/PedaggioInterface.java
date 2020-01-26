@@ -1,5 +1,5 @@
 package interfaces;
 
 public interface PedaggioInterface {
-	public double calculate();
+	public double calculate(double km);
 }

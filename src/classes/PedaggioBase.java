@@ -1,6 +1,8 @@
 package classes;
 
-public abstract class PedaggioBase {
+import interfaces.PedaggioInterface;
+
+public class PedaggioBase implements PedaggioInterface {
 	
 	private double tariffaUnitaria;
 	private double arrotondamento;

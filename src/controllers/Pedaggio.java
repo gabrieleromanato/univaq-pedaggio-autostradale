@@ -1,5 +1,7 @@
 package controllers;
 
+import interfaces.PedaggioInterface;
+
 /**
  * Handles fees
  * 
@@ -7,13 +9,12 @@ package controllers;
  *
  */
 
-public class Pedaggio {
+public class Pedaggio implements PedaggioInterface {
 	
 	private double tariffaUnitaria;
 	private double arrotondamento;
 	private String classeVeicolo;
 	private String classeAmbientale;
-	private boolean hasEUTax;
 
 	public Pedaggio() {
 		this(0.5, 0.50, "A", "1");
@@ -24,15 +25,6 @@ public class Pedaggio {
 		this.arrotondamento = arrotondamento;
 		this.classeVeicolo = classeVeicolo;
 		this.classeAmbientale = classeAmbientale;
-		hasEUTax = false;
-	}
-	
-	public void setEUTax(boolean flag) {
-		hasEUTax = flag;
-	}
-	
-	public boolean getEUTax() {
-		return hasEUTax;
 	}
 	
 	/**
@@ -80,7 +72,7 @@ public class Pedaggio {
 				break;
 		}
 		
-		if(hasEUTax) {
+		
 			switch(classeAmbientale) {
 				case "6":
 					amount += 1;
@@ -103,7 +95,6 @@ public class Pedaggio {
 					default:
 						break;
 			}
-		}
 		
 		return amount;
 	}
